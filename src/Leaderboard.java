@@ -59,6 +59,10 @@ public class Leaderboard {
         leaderboardFrame.setLocationRelativeTo(null);
         leaderboardFrame.setVisible(true);
     }
+
+    public List<Jugador> getJugadores() {
+        return jugadores;
+    }
 }
 
 

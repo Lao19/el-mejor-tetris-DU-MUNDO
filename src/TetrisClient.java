@@ -15,8 +15,8 @@ public class TetrisClient {
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
     }
 
-    public String sendMessage(String msg) throws IOException {
-        out.println(msg);
+    public String sendMessage(Leaderboard leaderboard) throws IOException {
+        out.println(leaderboard.getJugadores());
         String resp = in.readLine();
         return resp;
     }
