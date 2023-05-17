@@ -1,12 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class VentanaMenu extends JFrame {
 
     //private Jugador jugadorActual;
-    //private List<Jugador> listaJugadores = new ArrayList<>();
+    private List<Jugador> listaJugadores = new ArrayList<Jugador>();
 
     public VentanaMenu() {
 
