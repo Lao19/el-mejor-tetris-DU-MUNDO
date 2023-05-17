@@ -8,8 +8,6 @@ public class VentanaMenu extends JFrame {
 
     public VentanaMenu() {
 
-        
-
         super("Menú de Tetris");
         setSize(300, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,19 +28,16 @@ public class VentanaMenu extends JFrame {
         JButton botonLeaderboard = new JButton("Leaderboard");
         botonLeaderboard.addActionListener(e -> {
 
-            setVisible(false);
-
+            setVisible(true);
             
             leaderboard.mostrarTabla();
-        
 
         });
+
         panel.add(botonLeaderboard);
 
-
-
-
         JButton botonComoJugar = new JButton("Cómo Jugar");
+
         botonComoJugar.addActionListener(e -> {
             String mensaje = "Cómo Jugar:\n\n";
             mensaje += "Utiliza las teclas de dirección para mover las piezas.\n";
@@ -51,12 +46,11 @@ public class VentanaMenu extends JFrame {
             mensaje += "Presiona la barra espaciadora para pausar el juego.\n";
             JOptionPane.showMessageDialog(this, mensaje, "Cómo Jugar", JOptionPane.INFORMATION_MESSAGE);
         });
+
         panel.add(botonComoJugar);
 
-
-
-
         JButton botonSalir = new JButton("Salir");
+
         botonSalir.addActionListener(e -> {
             dispose();
             System.exit(0);
