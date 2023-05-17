@@ -6,6 +6,8 @@ public class VentanaMenu extends JFrame {
 
     private static Leaderboard leaderboard = new Leaderboard();
 
+    private TetrisServer server = new TetrisServer();;
+
     public VentanaMenu() {
 
         super("Menú de Tetris");

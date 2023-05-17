@@ -9,7 +9,7 @@ public class TetrisClient {
     private PrintWriter out;
     private BufferedReader in;
 
-    private void startConnection(String ip, int port) throws IOException {
+    public void startConnection(String ip, int port) throws IOException {
         clientSocket = new Socket(ip, port);
         out = new PrintWriter(clientSocket.getOutputStream(), true);
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
