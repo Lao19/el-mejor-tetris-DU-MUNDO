@@ -1,13 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class VentanaMenu extends JFrame {
 
-    //private Jugador jugadorActual;
-    private List<Jugador> listaJugadores = new ArrayList<Jugador>();
+    private static Leaderboard leaderboard = new Leaderboard();
 
     public VentanaMenu() {
 
@@ -28,9 +25,7 @@ public class VentanaMenu extends JFrame {
             new VentanaJuego();
         });
         panel.add(botonInicio);
-        
 
-        Leaderboard leaderboard = new Leaderboard();
         
         JButton botonLeaderboard = new JButton("Leaderboard");
         botonLeaderboard.addActionListener(e -> {

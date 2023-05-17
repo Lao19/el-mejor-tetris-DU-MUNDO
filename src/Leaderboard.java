@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Leaderboard {
-    private List<Jugador> jugadores;
+    private static List<Jugador> jugadores;
     private JFrame leaderboardFrame;
     private JTable tablaJugadores;
 
