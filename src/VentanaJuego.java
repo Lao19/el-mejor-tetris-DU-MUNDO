@@ -37,9 +37,10 @@ public class VentanaJuego {
 
     public static void main(String[] args) {
         VentanaMenu ventanaMenu = new VentanaMenu();
+        Multijugador multijugador = new Multijugador();
 
         Thread serverThread = new Thread(() -> {
-            iniciarServidor(Multijugador.PORT);
+            iniciarServidor(Multijugador.getPort());
         });
 
         serverThread.start();
