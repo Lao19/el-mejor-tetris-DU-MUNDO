@@ -210,6 +210,7 @@ public class Tablero extends JPanel implements KeyListener {
 
 
     private void enviarScore(Jugador jugador) {
+        System.out.printf("Enviando puntuación al servidor...%n");
         TetrisClient client = new TetrisClient();
         try {
             String serverIP = "127.0.0.1"; // IP del servidor
@@ -218,6 +219,7 @@ public class Tablero extends JPanel implements KeyListener {
 
             // Enviar nombre y puntuación al servidor
             client.sendScore(jugador.getNombre(), jugador.getScore());
+            System.out.printf("Puntuación enviada al servidor.%n");
 
             // Cerrar la conexión con el servidor
             client.stopConnection();
