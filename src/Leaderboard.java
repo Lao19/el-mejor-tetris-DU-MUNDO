@@ -16,10 +16,13 @@ public class Leaderboard {
     private JFrame leaderboardFrame;
     private JTable tablaJugadores;
 
-    
 
     public Leaderboard() {
-        jugadores = new ArrayList<>();
+
+        if(jugadores == null) {
+            jugadores = new ArrayList<>();
+        }
+
         leaderboardFrame = new JFrame("Tabla de Jugadores");
         tablaJugadores = new JTable();
     }

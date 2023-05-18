@@ -29,16 +29,14 @@ public class TetrisClient {
     public static void main(String[] args) {
         TetrisClient client = new TetrisClient();
         try {
-            String serverIP = "192.168.0.110"; // IP del servidor
+            String serverIP = "127.0.0.1"; // IP del servidor
             int serverPort = 12345; // Puerto del servidor
             client.startConnection(serverIP, serverPort);
 
-            // Obtener nombre y puntuación del jugador (desde el juego)
-            String nombre = "Jugador 2";
-            int score = 100;
-
             // Enviar nombre y puntuación al servidor
-            client.sendScore(nombre, score);
+            client.sendScore("jugador 1", 1);
+            client.sendScore("jugador 2", 1);
+            client.sendScore("jugador 3", 1);
 
             // Cerrar la conexión con el servidor
             client.stopConnection();

@@ -10,6 +10,12 @@ public class Multijugador {
     private JFrame frame;
     private JButton unirseSalaButton;
 
+    // Crear instancia de cliente y establecer la conexión
+
+    private String ip;
+
+    private int PORT = 12345; // Puerto en el que el servidor está escuchando
+
     public Multijugador() {
         frame = new JFrame("Multijugador");
         frame.setSize(300, 200); // Establecer un tamaño fijo para la ventana
@@ -20,17 +26,7 @@ public class Multijugador {
         unirseSalaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String ip = JOptionPane.showInputDialog(frame, "Ingrese la IP del servidor:");
-
-                // Crear instancia de cliente y establecer la conexión
-                TetrisClient client = new TetrisClient();
-                int port = 12345; // Puerto en el que el servidor está escuchando
-                try {
-                    client.startConnection(ip, port);
-                    // Lógica adicional del cliente (enviar datos al servidor, recibir respuestas, etc.)
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
+                ip = JOptionPane.showInputDialog(frame, "Ingrese la IP del servidor:");
             }
         });
         panel.add(unirseSalaButton);
@@ -39,5 +35,12 @@ public class Multijugador {
         frame.setVisible(true);
     }
 
-    
+
+    public String getIp() {
+        return ip;
+    }
+
+    public int getPORT() {
+        return PORT;
+    }
 }

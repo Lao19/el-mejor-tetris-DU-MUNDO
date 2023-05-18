@@ -4,13 +4,14 @@ import java.awt.*;
 
 public class VentanaMenu extends JFrame {
 
-    private static Leaderboard leaderboard = new Leaderboard();
+    private Leaderboard leaderboard = new Leaderboard();
 
-    
-
-    public VentanaMenu() {
+    public VentanaMenu(){
 
         super("Menú de Tetris");
+
+        this.leaderboard = leaderboard;
+
         setSize(300, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
@@ -26,7 +27,6 @@ public class VentanaMenu extends JFrame {
         });
         panel.add(botonInicio);
 
-        
         JButton botonLeaderboard = new JButton("Leaderboard");
         botonLeaderboard.addActionListener(e -> {
 
@@ -51,30 +51,14 @@ public class VentanaMenu extends JFrame {
 
         panel.add(botonComoJugar);
 
-
         JButton botonMultijugador = new JButton("Multijugador");
         botonMultijugador.addActionListener(e -> {
-            
-            
-            
+
             setVisible(true);
 
             new Multijugador();
         });
         panel.add(botonMultijugador);
-        
-
-
-
-
-
-
-
-
-
-
-
-
 
         JButton botonSalir = new JButton("Salir");
 
