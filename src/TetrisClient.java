@@ -29,7 +29,7 @@ public class TetrisClient {
     public static void main(String[] args) {
         TetrisClient client = new TetrisClient();
         try {
-            String serverIP = "127.0.0.1"; // IP del servidor
+            String serverIP = "192.168.0.110"; // IP del servidor
             int serverPort = 12345; // Puerto del servidor
             client.startConnection(serverIP, serverPort);
 
