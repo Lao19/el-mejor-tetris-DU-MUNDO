@@ -27,7 +27,7 @@ public class Leaderboard {
         tablaJugadores = new JTable();
     }
 
-    public void agregarJugador(Jugador jugador) {
+    public static void agregarJugador(Jugador jugador) {
         jugadores.add(jugador);
     }
 

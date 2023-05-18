@@ -6,38 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class TetrisServer {
-//    private ServerSocket serverSocket;
-//    private Socket clientSocket;
-//    private PrintWriter out;
-//    private BufferedReader in;
-//
-//    public void start(int port) throws IOException {
-//
-//        System.out.println("Servidor iniciado en el puerto: " + port);
-//        serverSocket = new ServerSocket(port);
-//        clientSocket = serverSocket.accept();
-//        out = new PrintWriter(clientSocket.getOutputStream(), true);
-//        in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-//
-//        String inputLine;
-//        while ((inputLine = in.readLine()) != null) {
-//            if (".".equals(inputLine)) {
-//                out.println("Recibido");
-//                out.close();
-//                break;
-//            }
-//            out.println(inputLine);
-//        }
-//
-//        in.close();
-//        clientSocket.close();
-//
-//    }
-//
-//    public void stop() throws IOException {
-//        serverSocket.close();
-//    }
-private ServerSocket serverSocket;
+    private ServerSocket serverSocket;
 
     public void start(int port) throws IOException {
         serverSocket = new ServerSocket(port);
@@ -65,13 +34,14 @@ private ServerSocket serverSocket;
                 String inputLine;
                 while ((inputLine = in.readLine()) != null) {
                     if (".".equals(inputLine)) {
-                        out.println("bye");
+                        out.println("Recibido");
                         break;
                     }
-                    System.out.printf("Recibido: %s\n", inputLine);
-                    out.println(inputLine);
+                    Leaderboard.agregarJugador(new Jugador(inputLine,
+                            Integer.parseInt(in.readLine())));
                 }
 
+                out.println("Recibido");
                 in.close();
                 out.close();
                 clientSocket.close();
