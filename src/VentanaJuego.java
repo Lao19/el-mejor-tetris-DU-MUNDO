@@ -39,7 +39,7 @@ public class VentanaJuego {
         VentanaMenu ventanaMenu = new VentanaMenu();
 
         Thread serverThread = new Thread(() -> {
-            iniciarServidor(12345);
+            iniciarServidor(Multijugador.PORT);
         });
 
         serverThread.start();

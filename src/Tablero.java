@@ -89,7 +89,6 @@ public class Tablero extends JPanel implements KeyListener {
     //bucle del tiempo de caida de las piezas
     public Tablero() {
 
-
         random = new Random();
 
         shape[0] = new Piezas(new int[][]{
@@ -211,10 +210,11 @@ public class Tablero extends JPanel implements KeyListener {
 
     private void enviarScore(Jugador jugador) {
         System.out.printf("Enviando puntuación al servidor...%n");
+       Multijugador multijugador = new Multijugador();
         TetrisClient client = new TetrisClient();
         try {
-            String serverIP = "127.0.0.1"; // IP del servidor
-            int serverPort = 12345; // Puerto del servidor
+            String serverIP = multijugador.getIp(); // IP del servidor
+            int serverPort = multijugador.getPort(); // Puerto del servidor
             client.startConnection(serverIP, serverPort);
 
             // Enviar nombre y puntuación al servidor

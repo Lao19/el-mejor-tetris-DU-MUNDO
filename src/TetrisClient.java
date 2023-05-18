@@ -30,7 +30,7 @@ public class TetrisClient {
         TetrisClient client = new TetrisClient();
         try {
             String serverIP = "127.0.0.1"; // IP del servidor
-            int serverPort = 12345; // Puerto del servidor
+            int serverPort = 8080; // Puerto del servidor
             client.startConnection(serverIP, serverPort);
 
             // Enviar nombre y puntuación al servidor

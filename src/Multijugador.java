@@ -12,9 +12,9 @@ public class Multijugador {
 
     // Crear instancia de cliente y establecer la conexión
 
-    private String ip;
+    private static String ip;
 
-    private int PORT = 12345; // Puerto en el que el servidor está escuchando
+    private static final int PORT = 8080; // Puerto en el que el servidor está escuchando
 
     public Multijugador() {
         frame = new JFrame("Multijugador");
@@ -40,7 +40,7 @@ public class Multijugador {
         return ip;
     }
 
-    public int getPORT() {
+    public int getPort() {
         return PORT;
     }
 }
