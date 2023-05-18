@@ -8,6 +8,7 @@ import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class Leaderboard {
 
     public void mostrarTabla() {
         // Ordenar la lista de jugadores por puntuación de mayor a menor
-        Collections.sort(jugadores, Collections.reverseOrder());
+        jugadores.sort(Collections.reverseOrder());
 
         // Crear un modelo de tabla
         DefaultTableModel modeloTabla = new DefaultTableModel();
@@ -71,7 +72,7 @@ public class Leaderboard {
     }
 
     public List<Jugador> getJugadores() {
-        return jugadores;
+        return jugadores.stream().sorted().toList();
     }
 }
 
