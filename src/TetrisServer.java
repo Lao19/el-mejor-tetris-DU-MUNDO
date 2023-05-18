@@ -37,6 +37,7 @@ public class TetrisServer {
                         out.println("Recibido");
                         break;
                     }
+
                     Leaderboard.agregarJugador(new Jugador(inputLine,
                             Integer.parseInt(in.readLine())));
                 }

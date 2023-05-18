@@ -19,7 +19,7 @@ public class Leaderboard {
 
     public Leaderboard() {
 
-        if(jugadores == null) {
+        if (jugadores == null) {
             jugadores = new ArrayList<>();
         }
 
@@ -28,7 +28,14 @@ public class Leaderboard {
     }
 
     public static void agregarJugador(Jugador jugador) {
-        jugadores.add(jugador);
+        jugadores.stream().filter(j -> j.getNombre().equals(jugador.getNombre())).findFirst().ifPresentOrElse(j -> agregarOReemplazar(j, jugador), () -> jugadores.add(jugador));
+    }
+
+    private static void agregarOReemplazar(Jugador oldJugador, Jugador newJugador) {
+        if (oldJugador.getScore() < newJugador.getScore()) {
+            jugadores.remove(oldJugador);
+            jugadores.add(newJugador);
+        }
     }
 
     public void mostrarTabla() {

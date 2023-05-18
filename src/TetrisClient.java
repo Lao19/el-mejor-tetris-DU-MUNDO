@@ -35,8 +35,8 @@ public class TetrisClient {
 
             // Enviar nombre y puntuación al servidor
             client.sendScore("jugador 1", 1);
-            client.sendScore("jugador 2", 1);
-            client.sendScore("jugador 3", 1);
+            client.sendScore("jugador 2", 6);
+            client.sendScore("jugador 3", 7);
 
             // Cerrar la conexión con el servidor
             client.stopConnection();
