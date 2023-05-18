@@ -40,7 +40,7 @@ public class VentanaJuego {
         Multijugador multijugador = new Multijugador();
 
         Thread serverThread = new Thread(() -> {
-            iniciarServidor(Multijugador.getPort());
+            iniciarServidor(multijugador.getPort());
         });
 
         serverThread.start();
